@@ -10,11 +10,11 @@ public class ArrayOperationsTestSuite {
     public void testGetAverage(){
         //Given
         int[] numbers = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
-        CalculatingAverage executor = new CalculatingAverage();
+
         //When
-        OptionalDouble average = executor.getAverage(numbers);
-        OptionalDouble average1 = OptionalDouble.of(10.5);
+        double average =  ArrayOperations.getAverage(numbers);
+        double average1 = 10.5;
         //Then
-        Assert.assertEquals(average, average1);
+        Assert.assertEquals(average, average1, 0);
     }
 }
