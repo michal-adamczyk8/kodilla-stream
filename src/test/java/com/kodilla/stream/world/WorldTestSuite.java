@@ -9,7 +9,7 @@ import java.util.List;
 
 public class WorldTestSuite {
     @Test
-    public void testGetPopleQuantity(){
+    public void testGetPeopleQuantity(){
         //Given
         Country country1 = new Country("Poland", new BigDecimal("123456789"));
         Country country2 = new Country("Germany", new BigDecimal("1234567899"));
