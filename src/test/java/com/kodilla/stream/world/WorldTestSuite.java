@@ -13,7 +13,7 @@ public class WorldTestSuite {
         //Given
         Country country1 = new Country("Poland", new BigDecimal("123456789"));
         Country country2 = new Country("Germany", new BigDecimal("1234567899"));
-        Country country3 = new Country("France", new BigDecimal("12345678999"));
+        Country country3 = new Country("Netherlands", new BigDecimal("12345678999"));
         Country country4 = new Country("Canada", new BigDecimal("123456789"));
         Country country5 = new Country("Mexico", new BigDecimal("1234567899"));
         Country country6 = new Country("United States", new BigDecimal("12345678999"));
