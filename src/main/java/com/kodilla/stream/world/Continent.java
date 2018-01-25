@@ -5,11 +5,18 @@ import java.util.List;
 
 public final class Continent {
     private final String continentName;
-    private final List<Country> listOfCountries;
+    private final List<Country> listOfCountries = new ArrayList<>();;
 
-    public Continent(final String continentName, final List<Country> listOfCountries) {
+    public Continent(final String continentName) {
         this.continentName = continentName;
-        this.listOfCountries = new ArrayList<>();
+    }
+
+    public void addCountry(Country country){
+        listOfCountries.add(country);
+    }
+
+    public boolean removeCountry(Country country){
+        return  listOfCountries.remove(country);
     }
 
     public List<Country> getListOfCountries(){

@@ -11,38 +11,47 @@ public class WorldTestSuite {
     @Test
     public void testGetPopleQuantity(){
         //Given
-        List<Country> europeanCountries = new ArrayList<>();
-        europeanCountries.add(new Country("Poland", new BigDecimal("123456789")));
-        europeanCountries.add(new Country("Germany", new BigDecimal("1234567899")));
-        europeanCountries.add(new Country("France", new BigDecimal("12345678999")));
-        List<Country> northAmericanCountires = new ArrayList<>();
-        northAmericanCountires.add(new Country("Canada", new BigDecimal("123456789")));
-        northAmericanCountires.add(new Country("Mexico", new BigDecimal("1234567899")));
-        northAmericanCountires.add(new Country("United States", new BigDecimal("12345678999")));
-        List<Country> southAmericanCountires = new ArrayList<>();
-        southAmericanCountires.add(new Country("Brazil", new BigDecimal("987654321")));
-        southAmericanCountires.add(new Country("Argentina", new BigDecimal("9876543211")));
-        southAmericanCountires.add(new Country("Chile", new BigDecimal("98765432111")));
-        List<Country> africanCountires = new ArrayList<>();
-        africanCountires.add(new Country("South Africa", new BigDecimal("987654321")));
-        africanCountires.add(new Country("Nigeria", new BigDecimal("9876543211")));
-        africanCountires.add(new Country("Egypt", new BigDecimal("9876543211")));
+        Country country1 = new Country("Poland", new BigDecimal("123456789"));
+        Country country2 = new Country("Germany", new BigDecimal("1234567899"));
+        Country country3 = new Country("France", new BigDecimal("12345678999"));
+        Country country4 = new Country("Canada", new BigDecimal("123456789"));
+        Country country5 = new Country("Mexico", new BigDecimal("1234567899"));
+        Country country6 = new Country("United States", new BigDecimal("12345678999"));
+        Country country7 = new Country("Brazil", new BigDecimal("987654321"));
+        Country country8 = new Country("Argentina", new BigDecimal("9876543211"));
+        Country country9 = new Country("Chile", new BigDecimal("98765432111"));
+        Country country10 = new Country("South Africa", new BigDecimal("987654321"));
+        Country country11 = new Country("Nigeria", new BigDecimal("9876543211"));
+        Country country12 = new Country("Egypt", new BigDecimal("98765432111"));
 
-        Continent europe = new Continent("Europe", europeanCountries);
-        Continent northAmerica = new Continent("North America", northAmericanCountires);
-        Continent southAmerica = new Continent("South America", southAmericanCountires);
-        Continent africa = new Continent("Africa", africanCountires);
+        Continent europe = new Continent("Europe");
+        europe.addCountry(country1);
+        europe.addCountry(country2);
+        europe.addCountry(country3);
+        Continent northAmerica = new Continent("North America");
+        northAmerica.addCountry(country4);
+        northAmerica.addCountry(country5);
+        northAmerica.addCountry(country6);
+        Continent southAmerica = new Continent("South America");
+        southAmerica.addCountry(country7);
+        southAmerica.addCountry(country8);
+        southAmerica.addCountry(country9);
+        Continent africa = new Continent("Africa");
+        africa.addCountry(country10);
+        africa.addCountry(country11);
+        africa.addCountry(country12);
 
-        List<Continent> listOfContinents = new ArrayList<>();
-        listOfContinents.add(europe);
-        listOfContinents.add(northAmerica);
-        listOfContinents.add(southAmerica);
-        listOfContinents.add(africa);
+        World world = new World();
+        world.addContinent(europe);
+        world.addContinent(northAmerica);
+        world.addContinent(southAmerica);
+        world.addContinent(africa);
+
 
         //When
-        World world = new World(listOfContinents);
         BigDecimal expectedResult = world.getPeopleQuantity();
+        BigDecimal actualResult = new BigDecimal("246666666660");
         //Then
-        Assert.assertEquals(expectedResult,"246666666660");
+        Assert.assertEquals(expectedResult,actualResult);
     }
 }
